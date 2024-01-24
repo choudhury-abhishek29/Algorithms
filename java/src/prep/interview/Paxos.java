@@ -1,5 +1,7 @@
 package prep.interview;
 
+import java.util.List;
+
 public class Paxos {
 	// Trade:
 	// id, type (BUY/SELL), totalGold, totalUSD
