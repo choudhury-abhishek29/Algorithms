@@ -11,6 +11,19 @@ public class LowestCommonAncestor {
         
             return root;
     }
+	
+	public void iterate(TreeNode root) {
+		dfs(root);
+	}
+	
+	public void dfs(TreeNode node) {
+		TreeNode curr = node;
+		if(curr!=null) {
+			dfs(curr.left);
+			System.out.println(curr.val);
+			dfs(curr.right);
+		}
+	}
 
 	public static void main(String[] args) {
 		TreeNode node1 = new TreeNode(1);
@@ -36,8 +49,10 @@ public class LowestCommonAncestor {
 		node8.right = node9;
 		
 		LowestCommonAncestor lca = new LowestCommonAncestor();
-		TreeNode res = lca.lowestCommonAncestor(node6, node3, node7);
-		System.out.println(res.val);
+//		TreeNode res = lca.lowestCommonAncestor(node6, node3, node7);
+//		System.out.println(res.val);
+		
+		lca.iterate(node6);
 
 	}
 
