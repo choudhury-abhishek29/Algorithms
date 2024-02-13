@@ -17,7 +17,7 @@ public class ValidBinaryTree {
 		if(node==null)
 			return true;
 		
-		if((max!=null && node.val >= max)||(min!=null && node.val<=min))
+		if((min!=null && node.val<=min) || (max!=null && max<=node.val))
 			return false;
 		
 		return dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
