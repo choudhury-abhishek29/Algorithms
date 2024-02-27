@@ -1,6 +1,7 @@
 package prep.leetcode;
 
 import java.util.Arrays;
+import java.util.List;
 
 import prep.tree.TreeNode;
 
@@ -33,10 +34,13 @@ public class BuildBinaryTree {
     }
 
 	public static void main(String[] args) {
-		BuildBinaryTree bbt = new BuildBinaryTree();
-		TreeNode res = bbt.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
-		System.out.println(res);
-
+//		BuildBinaryTree bbt = new BuildBinaryTree();
+//		TreeNode res = bbt.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
+//		System.out.println(res);
+		
+		int[] pre = new int[] {9,3,15,20,7};
+		List<int[]>x = Arrays.asList(pre);
+		System.out.println(x);
 	}
 
 }
