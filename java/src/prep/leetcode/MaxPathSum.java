@@ -6,19 +6,31 @@ public class MaxPathSum {
 	public int maxPathSum(TreeNode root) {
 		int[] maxSum = new int[] {Integer.MIN_VALUE};
 		int sum = Integer.MIN_VALUE;
-		dfs(root, maxSum, sum);
-		System.out.println("sum:"+sum+" | maxSum:"+maxSum[0]);
+		int a = dfs(root, maxSum);
+		int b = dfs(root, sum);
+		System.out.println("a:"+a+" | b:"+b);
 		return maxSum[0];
     }
 	
-	public int dfs(TreeNode node, int[] maxSum, int sum) {
+	public int dfs(TreeNode node, int[] maxSum) {
 		if(node == null)
 			return 0;
 		
-		int left = Math.max(0, dfs(node.left, maxSum, sum));
-		int right = Math.max(0,  dfs(node.right, maxSum, sum));
+		int left = Math.max(0, dfs(node.left, maxSum));
+		int right = Math.max(0,  dfs(node.right, maxSum));
 		
 		maxSum[0] = Math.max(maxSum[0], node.val+left+right);
+		
+		return node.val + Math.max(left, right);
+	}
+	
+	public int dfs(TreeNode node, int sum) {
+		if(node == null)
+			return 0;
+		
+		int left = Math.max(0, dfs(node.left, sum));
+		int right = Math.max(0,  dfs(node.right, sum));
+		
 		sum = Math.max(sum, node.val+left+right);
 		
 		return node.val + Math.max(left, right);
