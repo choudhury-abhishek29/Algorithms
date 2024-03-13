@@ -19,8 +19,6 @@ public class BuildBinaryTree {
             	mid = i;
         }
 		
-		System.out.println("mid:"+mid+" x:"+x);
-		
 		int[] pre_left = Arrays.copyOfRange(preorder, 1, mid+1);
 		int[] in_left = Arrays.copyOfRange(inorder, 0, mid);
 		
@@ -34,13 +32,13 @@ public class BuildBinaryTree {
     }
 
 	public static void main(String[] args) {
-//		BuildBinaryTree bbt = new BuildBinaryTree();
-//		TreeNode res = bbt.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
-//		System.out.println(res);
+		BuildBinaryTree bbt = new BuildBinaryTree();
+		TreeNode res = bbt.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
+		System.out.println(res);
 		
-		int[] pre = new int[] {9,3,15,20,7};
-		List<int[]>x = Arrays.asList(pre);
-		System.out.println(x);
+//		int[] pre = new int[] {9,3,15,20,7};
+//		List<int[]>x = Arrays.asList(pre);
+//		System.out.println(x);
 	}
 
 }
